@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundBack" parent="">
+        <item name="android:radius">80dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="color">@color/white</item>
+    </style>
+    <style name="navTextSize">
+        <item name="android:textSize">10sp</item>"
+    </style>
+</resources>
