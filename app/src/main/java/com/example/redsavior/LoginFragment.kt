@@ -8,17 +8,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.redsavior.databinding.FragmentLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment() {
     private var binding: FragmentLoginBinding? = null
+    private lateinit var auth : FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+        auth = FirebaseAuth.getInstance()
         return binding!!.root
     }
 
@@ -33,12 +37,28 @@ class LoginFragment : Fragment() {
         }
 
         binding!!.loginBtn.setOnClickListener {
+            val email = binding!!.eMailId.editText?.text.toString()
+            val password = binding!!.passwordId.editText?.text.toString()
+
             val bundle = Bundle()
             bundle.putString("name","")
             bundle.putString("email", binding!!.eMailId.editText?.text.toString())
             bundle.putString("password", binding!!.passwordId.editText?.text.toString())
             if (checkValidation()) {
-                findNavController().navigate(R.id.action_loginFragment_to_detailsFragment,bundle)
+                auth.signInWithEmailAndPassword(
+                    email,
+                    password
+                )
+                    .addOnCompleteListener{
+                        task ->
+                        if (task.isSuccessful) {
+                            findNavController().navigate(R.id.action_loginFragment_to_detailsFragment,bundle)
+                        }
+                        else{
+                            Toast.makeText(requireContext(), "Error Occurred!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
             }
         }
     }

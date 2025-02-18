@@ -1,146 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradient1"
     tools:context=".LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
+        android:id="@+id/linearid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginHorizontal="20dp"
-        android:paddingVertical="5dp"
         android:background="@drawable/cornerbackgond"
         android:gravity="center"
-        android:id="@+id/linearid"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:paddingVertical="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
             android:text="Welcome Back !"
-            android:textSize="30sp"
             android:textAlignment="center"
             android:textColor="@color/textcolor"
-            android:layout_marginVertical="20dp"
-            />
+            android:textSize="30sp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/e_mail_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/e_mail_id"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="5dp"
-            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:startIconDrawable="@drawable/baseline_email_24"
-            >
+            app:boxCornerRadiusTopStart="10dp"
+            app:startIconDrawable="@drawable/baseline_email_24">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/baseline_email_24"
                 android:hint="Email"
-                android:textColor="#001DCA"
-                />
+                android:textColor="#001DCA" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password_id"
             android:layout_marginHorizontal="20dp"
-            app:startIconDrawable="@drawable/baseline_lock_24"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="#377EF4"
-            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             app:boxCornerRadiusBottomStart="10dp"
             app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            >
+            app:boxCornerRadiusTopStart="10dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#377EF4"
+            app:startIconDrawable="@drawable/baseline_lock_24">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:textColor="#0021E4"
-                android:drawableStart="@drawable/baseline_lock_24"
                 android:layout_marginBottom="10dp"
-                />
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:hint="Password"
+                android:textColor="#0021E4" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:text="LOGIN"
-            android:id="@+id/login_btn"
-            android:textSize="15sp"
-            android:paddingVertical="5dp"
-            android:paddingHorizontal="30dp"
-            android:textColor="@color/white"
-            android:background="@drawable/gradient2"
-            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="or continue with "
-            android:textSize="15sp"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="2dp"
+            android:backgroundTint="#00FFFFFF"
+            android:text="Forgot Password ?"
+            android:textColor="#0021E4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/gradient2"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="5dp"
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="9dp"
-            />
+            android:text="or continue with "
+            android:textSize="15sp" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center">
+
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/img"
-                android:textColor="@color/black"
-                android:layout_margin="10dp"
-                />
+                android:textColor="@color/black" />
+
             <View
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/img_1"
-                android:textColor="@color/black"
                 android:layout_margin="10dp"
-                />
+                android:background="@drawable/img_1"
+                android:textColor="@color/black" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/botomId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/botomId"
-        app:layout_constraintTop_toBottomOf="@id/linearid"
         android:layout_marginHorizontal="50dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/linearid"
 
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have account ? "
-            android:textSize="15sp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            />
+            android:textSize="15sp" />
+
         <Button
+            android:id="@+id/registerId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#00FFFFFF"
-            android:id="@+id/registerId"
-            android:text="Register"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="@color/white"
             android:layout_marginStart="-20dp"
-            />
+            android:backgroundTint="#00FFFFFF"
+            android:text="Register"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
